@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ventana modal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="overlay active" id='overlay'>
+      <div class="modal" id='modal'>
+          <div class="modal-cerrar" id='close'>
+            <span>X</span></div>
+          <div class="modal-img"></div>
+          <p>Inscribete para las ofertas de navidad</p>
+          <div class="modal-buttons">
+            <button class="btn" id='hide-modal'>Sí quiero</button>
+            <button class="btn">No me interesa</button>
+          </div>
+        </div>
+  </div>
+  <div class="offer" id='offer'>
+    <a href="" class="offer-button">View offers</a>
+  </div>
+  <script>
+    const $button = document.getElementById('hide-modal');
+    const $modal = document.getElementById('modal');
+    const $overlay = document.getElementById('overlay');
+    const $close = document.getElementById('close');
+    const $offer = document.getElementById('offer'); 
+
+
+
+    $offer.addEventListener ('click', (event) => {
+      $modal.style.animation = 'modalOut .1s forwards';
+      $overlay.classList.remove('active');
+    });  
+
+
+    $button.addEventListener ('click', (event) => {
+      $modal.style.animation = 'modalOut .8s forwards';
+      $overlay.classList.remove('active');
+    });
+
+    $close.addEventListener ('click', (event) => {
+      $modal.style.animation = 'modalOut .8s forwards';
+      $overlay.classList.remove('active');
+    });
+
+    $overlay.addEventListener ('click', (event) => {
+     if(event.target == $overlay){
+      $modal.style.animation = 'modalOut .8s forwards';
+      $overlay.classList.remove('active');
+     }
+    });
+
+    
+    
+   
+
+
+  </script>
+</body>
+</html>
